@@ -16,6 +16,11 @@ const port = process.env.PORT || 5000
 app.get('/', (req, res) => {
     res.json('Hello World!')
   })
+  
+app.get('/oi', (req, res) => {
+    res.json('teste do ftp OK')
+  })
+
 
 app.get('/users', function (req, res) {
     res.json("Em desenvolvimento")   
