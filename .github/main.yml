@@ -1,0 +1,22 @@
+name: Aula de GCS (PUC CAMPINAS)
+run-name: ${{ github.actor }} Projeto de GCS
+
+on: [push]
+ 
+jobs:
+  primeiro:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.event_name }} foi disparado"
+      - run: echo " No ${{runner.os}}"
+      - run: echo " Repositorio ${{github.repository}} na branch ${{github.ref}}"
+      
+      - name: Checkout o repositorio
+        uses: actions/checkout@v3
+      
+      - name: Mostrar rodadndo
+        run: echo  "teste"
+      - name: Mostrar rodadndo
+        run: echo "${{ github.event_name }} foi disparado"
+      - name: listando conteudo
+        run: ls -la ${{ github.workspace }}
