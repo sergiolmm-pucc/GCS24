@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 console.log('No value for FOO yet:', process.env.FOO);
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV1 !== 'production') {
     require('dotenv').config();
   }
 console.log('Now the value for FOO is:', process.env.FOO);  
@@ -16,7 +16,7 @@ const port = process.env.PORT || 5000
 app.get('/', (req, res) => {
     res.json('Hello World!')
   })
-  
+
 app.get('/oi', (req, res) => {
     res.json('teste do ftp OK')
   })
