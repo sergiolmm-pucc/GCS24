@@ -1,4 +1,5 @@
 name: Aula de GCS (PUC CAMPINAS)
+
 run-name: ${{ github.actor }} Projeto de GCS
 
 on: [push]
@@ -24,29 +25,4 @@ jobs:
       - name: listando conteudo
         run: ls -la ${{ github.workspace }}
 
-  web-deploy:
-    name: 🎉 Deploy
-    permissions: write-all
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
  
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - name: 🔨 Build Project
-      - run: |
-          npm install
-          npm run build
-    
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.server }}
-          username: ${{ secrets.user }}
-          password: ${{ secrets.password }}
-          server-dir: applications/teste1/
-
