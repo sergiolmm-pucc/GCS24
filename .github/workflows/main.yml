@@ -6,7 +6,7 @@ on: [push]
  
 jobs:
   primeiro:
-    name: 🎉 Teste ambiente
+    name: Teste_ambiente
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ github.event_name }} foi disparado"
@@ -28,6 +28,7 @@ jobs:
 
  
   web-deploy:
+    needs: Teste_ambiente
     name: 🎉 Deploy
     permissions: write-all
     runs-on: ubuntu-latest
