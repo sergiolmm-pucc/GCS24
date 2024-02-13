@@ -28,7 +28,7 @@ jobs:
 
  
   web-deploy:
-    needs: Teste_ambiente
+    needs: primeiro
     name: 🎉 Deploy
     permissions: write-all
     runs-on: ubuntu-latest
